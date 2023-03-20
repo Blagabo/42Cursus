@@ -1,4 +1,4 @@
-## [Notion](42culos.notion.site)
+## [Notion](https://42culos.notion.site)
 
 ## Funciones
 - [ft_memcpy](https://github.com/Blagabo/42Cursus/blob/main/libft/ft_memcpy.c)

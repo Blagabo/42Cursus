@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 17:13:21 by gblanco-          #+#    #+#             */
-/*   Updated: 2023/03/14 14:55:17 by gblanco-         ###   ########.fr       */
+/*   Created: 2023/03/20 19:54:51 by gblanco-          #+#    #+#             */
+/*   Updated: 2023/03/20 19:55:07 by gblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_calloc(unsigned long num, unsigned long size)
 {
-	size_t	i;
+	unsigned long	i;
+	void			*ptr;
 
 	i = 0;
-	if (!dst && !src)
-		return (NULL);
-	while (i < n)
+	ptr = malloc(num * size);
+	if (ptr == 0)
+		return (0);
+	while (i < num * size)
 	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		((unsigned char *)ptr)[i] = 0;
 		i++;
 	}
-	return (dst);
+	return (ptr);
 }

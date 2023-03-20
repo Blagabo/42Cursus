@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 17:13:21 by gblanco-          #+#    #+#             */
-/*   Updated: 2023/03/14 14:55:17 by gblanco-         ###   ########.fr       */
+/*   Created: 2023/03/20 19:50:20 by gblanco-          #+#    #+#             */
+/*   Updated: 2023/03/20 19:52:40 by gblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strnstr(const char *hs, const char *needlen, unsigned long len)
 {
-	size_t	i;
+	unsigned long	i;
+	unsigned long	j;
 
 	i = 0;
-	if (!dst && !src)
-		return (NULL);
-	while (i < n)
+	if (needlen[0] == '\0')
+		return ((char *)hs);
+	while (hs[i] != '\0' && i < len)
 	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		j = 0;
+		while (hs[i + j] == needlen[j] && needlen[j] != '\0' && i + j < len)
+			j++;
+		if (needlen[j] == '\0')
+			return ((char *)hs + i);
 		i++;
 	}
-	return (dst);
+	return (0);
 }

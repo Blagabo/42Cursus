@@ -6,7 +6,7 @@
 /*   By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 17:09:01 by gblanco-          #+#    #+#             */
-/*   Updated: 2023/05/20 21:43:55 by gblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/21 02:06:21 by gblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 int	ft_putstr_pf(char *str)
 {
 	int	counter;
+	int	temp;
 
 	if (!str)
 		str = "(null)";
 	counter = 0;
 	while (*str)
 	{
-		counter += ft_putchar_pf(*str);
+		temp = ft_putchar_pf(*str);
+		if (temp == -1)
+			return (-1);
+		counter += temp;
 		str++;
 	}
 	return (counter);

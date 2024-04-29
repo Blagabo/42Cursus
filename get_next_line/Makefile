@@ -10,8 +10,6 @@ OBJ = $(SRC:.c=.o)
 
 all:	$(NAME)
 
-$(NAME):	$(OBJ) $(LIB)
-
 $(NAME): 	$(OBJ) $(LIB)
 	$(AR) $(NAME) $(OBJ)
 

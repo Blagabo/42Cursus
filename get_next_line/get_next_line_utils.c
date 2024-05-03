@@ -6,7 +6,7 @@
 /*   By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 08:56:53 by gblanco-          #+#    #+#             */
-/*   Updated: 2024/04/29 19:39:16 by gblanco-         ###   ########.fr       */
+/*   Updated: 2024/05/02 23:06:45 by gblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,17 @@ void	ft_bzero(void *s, unsigned int n)
 		dst[x] = '\0';
 		++x;
 	}
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
+
+	if (count > 0 && size > 0 && count > ULONG_MAX / size)
+		return (NULL);
+	ptr = (void *)malloc(count * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }

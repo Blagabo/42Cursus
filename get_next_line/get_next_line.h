@@ -6,7 +6,7 @@
 /*   By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 08:42:32 by gblanco-          #+#    #+#             */
-/*   Updated: 2024/04/29 19:39:19 by gblanco-         ###   ########.fr       */
+/*   Updated: 2024/05/02 23:06:26 by gblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int		ft_strchr(const char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(const char *str);
 void	ft_bzero(void *s, unsigned int n);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif

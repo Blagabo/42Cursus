@@ -1,7 +1,10 @@
 *.log
 *.swp
-.vscode/
+.vscode
 
 *.out
 *.o
 .DS_Store
+
+*/.DS_Store
+*/.vscode

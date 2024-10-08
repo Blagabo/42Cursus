@@ -6,38 +6,48 @@
 /*   By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 19:54:59 by gblanco-          #+#    #+#             */
-/*   Updated: 2024/10/01 12:09:24 by gblanco-         ###   ########.fr       */
+/*   Updated: 2024/10/08 11:32:37 by gblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-static int	bit_pos = 0;
-static char	character = 0;
-
-void	signal_handler(int signum)
+static void	action(int sig, siginfo_t *info, void *context)
 {
-	if (signum == SIGUSR2)
-		character |= (1 << (7 - bit_pos));
-	bit_pos++;
-	if (bit_pos == 8)
+	static int				i = 0;
+	static pid_t			client_pid = 0;
+	static unsigned char	c = 0;
+
+	(void)context;
+	if (!client_pid)
+		client_pid = info->si_pid;
+	c |= (sig == SIGUSR2);
+	if (++i == 8)
 	{
-		ft_printf("Character received: %c\n", character);
-		bit_pos = 0;
-		character = 0;
+		i = 0;
+		if (!c)
+		{
+			kill(client_pid, SIGUSR2);
+			client_pid = 0;
+			return ;
+		}
+		ft_printf("%c", c);
+		c = 0;
+		kill(client_pid, SIGUSR1);
 	}
+	else
+		c <<= 1;
 }
 
 int	main(void)
 {
-	struct sigaction	sa;
+	struct sigaction	s_sigaction;
 
-	sa.sa_handler = signal_handler;
-	sigemptyset(&sa.sa_mask);
-	sa.sa_flags = 0;
-	sigaction(SIGUSR1, &sa, NULL);
-	sigaction(SIGUSR2, &sa, NULL);
-	ft_printf("Server ON PID: %d\n", getpid());
+	ft_printf("Server PID: %d\n", getpid());
+	s_sigaction.sa_sigaction = action;
+	s_sigaction.sa_flags = SA_SIGINFO;
+	sigaction(SIGUSR1, &s_sigaction, 0);
+	sigaction(SIGUSR2, &s_sigaction, 0);
 	while (1)
 		pause();
 	return (0);

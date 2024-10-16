@@ -9,22 +9,22 @@
 
 ## 🌐 COMMON CORE RANK 01
 
-- ## 📚 Born 2 Be Root
-
-  - <h3>APROBADO ✅🎉</h3>
-
 - ## 📚 ft_printf
 
   - <h3><a href="https://github.com/Blagabo/42Cursus/tree/main/ft_printf">APROBADO ✅🎉</a></h3>
 
 - ## 📚 get_next_line
-  - <h3><a href="https://github.com/Blagabo/42Cursus/tree/main/get_next_line"></a>APROBADO ✅🎉</a></h3>
+
+  - <h3><a href="https://github.com/Blagabo/42Cursus/tree/main/get_next_line">APROBADO ✅🎉</a></h3>
+
+- ## 📚 Born 2 Be Root
+  - <h3>APROBADO ✅🎉</h3>
 
 ## 🌐 COMMON CORE RANK 02
 
 - ## 📚 minitalk
 
-  - <h3><a href="https://github.com/Blagabo/42Cursus/tree/main/minitalk">APROBADO ✅🎉</a></h3>
+  - <h3><a href="https://github.com/Blagabo/42Cursus/tree/main/Minitalk">APROBADO ✅🎉</a></h3>
 
 - ## 📚 so_long
 

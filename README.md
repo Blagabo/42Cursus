@@ -1,34 +1,28 @@
-# 42 Cursus progress 👨🏻‍💻
+# 42 Common Core Student 👨🏻‍💻
 
 [![gblanco-'s 42 stats](https://badge.mediaplus.ma/greenbinary/gblanco-?1337Badge=off&UM6P=off)](https://github.com/oakoudad/badge42)
 
-## 🌐 COMMON CORE RANK 00
+## 🌐 42 Common Core Student
 
-- ## 📚 Libft
-  - <h3><a href="https://github.com/Blagabo/42Cursus/blob/main/libft/README.md">APROBADO ✅🎉</a></h3>
+✅🎉: APROBADO
+👷: EN PROCESO
 
-## 🌐 COMMON CORE RANK 01
+<table>
+<tr>
+<th align="left"> &nbsp; Common Core Projects</th>
+</tr>
+<tr>
 
-- ## 📚 ft_printf
+<td>
 
-  - <h3><a href="https://github.com/Blagabo/42Cursus/tree/main/ft_printf">APROBADO ✅🎉</a></h3>
+| 🌐 Circle 0                                                       | 🌐 Circle 1                                                                       | 🌐 Circle 2                                                             |
+| ----------------------------------------------------------------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| [Libft](https://github.com/Blagabo/42Cursus/tree/main/libft) ✅🎉 | [Born2BeRoot]() ✅🎉                                                              | [MiniTalk](https://github.com/Blagabo/42Cursus/tree/main/Minitalk) ✅🎉 |
+|                                                                   | [Printf](https://github.com/Blagabo/42Cursus/tree/main/ft_printf) ✅🎉            | [FDF]() 👷‍♂️                                                              |
+|                                                                   | [Get_Next_Line](https://github.com/Blagabo/42Cursus/tree/main/get_next_line) ✅🎉 | [Push_Swap]() 👷‍♂️                                                        |
 
-- ## 📚 get_next_line
+</td>
 
-  - <h3><a href="https://github.com/Blagabo/42Cursus/tree/main/get_next_line">APROBADO ✅🎉</a></h3>
+</table>
 
-- ## 📚 Born 2 Be Root
-  - <h3>APROBADO ✅🎉</h3>
-
-## 🌐 COMMON CORE RANK 02
-
-- ## 📚 minitalk
-
-  - <h3><a href="https://github.com/Blagabo/42Cursus/tree/main/Minitalk">APROBADO ✅🎉</a></h3>
-
-- ## 📚 so_long
-
-  - <h3>EN PROCESO 👷‍♂️</h3>
-
-- ## 📚 push_swap
-  - <h3>EN PROCESO 👷‍♂️</h3>
+<br>

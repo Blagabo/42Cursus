@@ -6,16 +6,16 @@
 /*   By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:54:51 by gblanco-          #+#    #+#             */
-/*   Updated: 2023/03/20 19:55:07 by gblanco-         ###   ########.fr       */
+/*   Updated: 2023/04/10 12:18:03 by gblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(unsigned long num, unsigned long size)
+void	*ft_calloc(size_t num, size_t size)
 {
-	unsigned long	i;
-	void			*ptr;
+	size_t	i;
+	void	*ptr;
 
 	i = 0;
 	ptr = malloc(num * size);

@@ -6,7 +6,7 @@
 /*   By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 23:10:53 by gblanco-          #+#    #+#             */
-/*   Updated: 2024/11/07 18:23:58 by gblanco-         ###   ########.fr       */
+/*   Updated: 2024/11/07 19:00:55 by gblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ typedef struct s_node
 }					t_node;
 
 t_list				*parse_arguments(int argc, char **argv);
-// void perform_operations();
 
 #endif

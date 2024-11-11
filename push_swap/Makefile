@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/07 18:18:50 by gblanco-          #+#    #+#              #
-#    Updated: 2024/11/07 18:18:51 by gblanco-         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
@@ -24,7 +12,14 @@ LIBFT = $(LIBFT_DIR)/libft.a
 FT_PRINTF_DIR = includes/ft_printf
 FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 
-SRC_FILES = main.c parsing.c sorting.c operations.c utils.c
+SRC_FILES = ft_push.c \
+ft_reverse_rotate.c \
+ft_rotate.c \
+ft_swap.c \
+main.c \
+parsing.c \
+sorting.c \
+utils.c
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 

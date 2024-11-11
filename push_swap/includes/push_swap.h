@@ -6,7 +6,7 @@
 /*   By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 23:10:53 by gblanco-          #+#    #+#             */
-/*   Updated: 2024/11/11 17:25:52 by gblanco-         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:42:53 by gblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,15 @@ typedef struct s_stack
 
 t_stack				*parse_arguments(int argc, char **argv);
 void				sa(t_stack *stack_a);
+void				sb(t_stack *stack_b);
+void				ss(t_stack *stack_a, t_stack *stack_b);
+void				pa(t_stack *stack_a, t_stack *stack_b);
+void				pb(t_stack *stack_a, t_stack *stack_b);
+void				ra(t_stack *stack_a);
+void				rb(t_stack *stack_b);
+void				rr(t_stack *stack_a, t_stack *stack_b);
+void				rra(t_stack *stack_a);
+void				rrb(t_stack *stack_b);
+void				rrr(t_stack *stack_a, t_stack *stack_b);
 
 #endif

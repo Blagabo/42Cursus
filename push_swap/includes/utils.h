@@ -6,7 +6,7 @@
 /*   By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:36:39 by gblanco-          #+#    #+#             */
-/*   Updated: 2024/11/07 19:00:57 by gblanco-         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:41:35 by gblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 
 void	error_exit(char *msg);
 int		ft_str_isdigit(const char *str);
-void	print_stack(t_list *stack);
+void	print_stack(t_node *stack);
 long	ft_atol(const char *str);
+void	ft_free_split(char **arr);
 
 #endif

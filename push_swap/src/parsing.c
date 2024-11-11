@@ -6,25 +6,25 @@
 /*   By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 23:42:15 by gblanco-          #+#    #+#             */
-/*   Updated: 2024/11/07 18:27:19 by gblanco-         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:48:44 by gblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../includes/utils.h"
 
-int	is_duplicate(t_list *stack_a, int value)
+int	is_duplicate(t_node *stack_a, int value)
 {
 	while (stack_a)
 	{
-		if (*(int *)(stack_a->content) == value)
+		if (stack_a->value == value)
 			return (1);
 		stack_a = stack_a->next;
 	}
 	return (0);
 }
 
-void	check_valid_number(char *str, t_list *stack_a)
+void	check_valid_number(char *str, t_node *stack_a)
 {
 	long	value;
 
@@ -37,25 +37,25 @@ void	check_valid_number(char *str, t_list *stack_a)
 		error_exit("Error: Duplicate number");
 }
 
-void	ft_free_split(char **arr)
+void	parse_value(char *arg, t_node **stack_a)
 {
-	int	i;
+	int		value;
+	t_node	*new_node;
 
-	i = 0;
-	while (arr[i])
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
+	check_valid_number(arg, *stack_a);
+	value = ft_atoi(arg);
+	new_node = malloc(sizeof(t_node));
+	if (!new_node)
+		error_exit("Error: Memory allocation failed");
+	new_node->value = value;
+	new_node->next = NULL;
+	ft_lstadd_back((t_list **)stack_a, (t_list *)new_node);
 }
 
-t_list	*parse_single_argument(char *arg, t_list *stack_a)
+t_node	*parse_single_argument(char *arg, t_node *stack_a)
 {
 	char	**args;
 	int		j;
-	t_list	*new_node;
-	int		*value;
 
 	args = ft_split(arg, ' ');
 	if (!args)
@@ -63,22 +63,17 @@ t_list	*parse_single_argument(char *arg, t_list *stack_a)
 	j = 0;
 	while (args[j] != NULL)
 	{
-		check_valid_number(args[j], stack_a);
-		value = malloc(sizeof(int));
-		if (!value)
-			error_exit("Error: Memory allocation failed");
-		*value = ft_atoi(args[j]);
-		new_node = ft_lstnew(value);
-		ft_lstadd_back(&stack_a, new_node);
+		parse_value(args[j], &stack_a);
 		j++;
 	}
 	ft_free_split(args);
 	return (stack_a);
 }
 
-t_list	*parse_arguments(int argc, char **argv)
+t_stack	*parse_arguments(int argc, char **argv)
 {
-	t_list	*stack_a;
+	t_node	*stack_a;
+	t_stack	*parsed_stack;
 	int		i;
 
 	stack_a = NULL;
@@ -90,5 +85,9 @@ t_list	*parse_arguments(int argc, char **argv)
 		stack_a = parse_single_argument(argv[i], stack_a);
 		i++;
 	}
-	return (stack_a);
+	parsed_stack = malloc(sizeof(t_stack));
+	if (!parsed_stack)
+		error_exit("Error: Memory allocation failed");
+	parsed_stack->top = stack_a;
+	return (parsed_stack);
 }

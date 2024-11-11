@@ -6,7 +6,7 @@
 /*   By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 23:59:34 by gblanco-          #+#    #+#             */
-/*   Updated: 2024/11/07 18:26:20 by gblanco-         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:48:43 by gblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,15 @@ int	ft_str_isdigit(const char *str)
 	return (1);
 }
 
-void	print_stack(t_list *stack)
+void	print_stack(t_node *stack)
 {
-	while (stack)
+	t_node	*current;
+
+	current = stack;
+	while (current)
 	{
-		ft_printf("%d ", *(int *)(stack->content));
-		stack = stack->next;
+		ft_printf("%d ", current->value);
+		current = current->next;
 	}
 	ft_printf("\n");
 }
@@ -66,4 +69,17 @@ long	ft_atol(const char *str)
 		i++;
 	}
 	return (result * sign);
+}
+
+void	ft_free_split(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }

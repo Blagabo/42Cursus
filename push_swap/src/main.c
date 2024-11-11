@@ -6,7 +6,7 @@
 /*   By: gblanco- <gblanco-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 23:30:55 by gblanco-          #+#    #+#             */
-/*   Updated: 2024/11/07 17:50:54 by gblanco-         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:33:24 by gblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,13 @@
 
 int	main(int argc, char **argv)
 {
-	t_list	*stack_a;
+	t_stack	*stack_a;
 
 	stack_a = parse_arguments(argc, argv);
-	print_stack(stack_a);
+	ft_printf("Original: ");
+	print_stack(stack_a->top);
+	sa(stack_a);
+	ft_printf("Después del sa: ");
+	print_stack(stack_a->top);
 	return (0);
 }
